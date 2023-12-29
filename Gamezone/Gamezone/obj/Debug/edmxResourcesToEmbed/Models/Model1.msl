@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GamesDataModelStoreContainer" CdmEntityContainer="GamesDataEntities1">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="GamesDataModel.Admin">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="admin_key" ColumnName="admin_key" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Game_engines">
+      <EntityTypeMapping TypeName="GamesDataModel.Game_engines">
+        <MappingFragment StoreEntitySet="Game_engines">
+          <ScalarProperty Name="game_engine_id" ColumnName="game_engine_id" />
+          <ScalarProperty Name="game_id" ColumnName="game_id" />
+          <ScalarProperty Name="game_engine_name" ColumnName="game_engine_name" />
+          <ScalarProperty Name="game_engine_description" ColumnName="game_engine_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Game_stores">
+      <EntityTypeMapping TypeName="GamesDataModel.Game_stores">
+        <MappingFragment StoreEntitySet="Game_stores">
+          <ScalarProperty Name="store_id" ColumnName="store_id" />
+          <ScalarProperty Name="store_name" ColumnName="store_name" />
+          <ScalarProperty Name="store_game_id" ColumnName="store_game_id" />
+          <ScalarProperty Name="store_description" ColumnName="store_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Game_titles">
+      <EntityTypeMapping TypeName="GamesDataModel.Game_titles">
+        <MappingFragment StoreEntitySet="Game_titles">
+          <ScalarProperty Name="game_id" ColumnName="game_id" />
+          <ScalarProperty Name="game_name" ColumnName="game_name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="genre" ColumnName="genre" />
+          <ScalarProperty Name="platform" ColumnName="platform" />
+          <ScalarProperty Name="developer" ColumnName="developer" />
+          <ScalarProperty Name="release_date" ColumnName="release_date" />
+          <ScalarProperty Name="ign_rate" ColumnName="ign_rate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gaming_organization">
+      <EntityTypeMapping TypeName="GamesDataModel.gaming_organization">
+        <MappingFragment StoreEntitySet="gaming_organization">
+          <ScalarProperty Name="org_id" ColumnName="org_id" />
+          <ScalarProperty Name="org_name" ColumnName="org_name" />
+          <ScalarProperty Name="org_establishment_date" ColumnName="org_establishment_date" />
+          <ScalarProperty Name="org_team_name" ColumnName="org_team_name" />
+          <ScalarProperty Name="org_achievements" ColumnName="org_achievements" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Guests">
+      <EntityTypeMapping TypeName="GamesDataModel.Guest">
+        <MappingFragment StoreEntitySet="Guest">
+          <ScalarProperty Name="guest_id" ColumnName="guest_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proplayers">
+      <EntityTypeMapping TypeName="GamesDataModel.Proplayer">
+        <MappingFragment StoreEntitySet="Proplayers">
+          <ScalarProperty Name="player_id" ColumnName="player_id" />
+          <ScalarProperty Name="player_name" ColumnName="player_name" />
+          <ScalarProperty Name="player_nationality" ColumnName="player_nationality" />
+          <ScalarProperty Name="player_team" ColumnName="player_team" />
+          <ScalarProperty Name="player_achievements" ColumnName="player_achievements" />
+          <ScalarProperty Name="player_team_id" ColumnName="player_team_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Streamer_details">
+      <EntityTypeMapping TypeName="GamesDataModel.Streamer_details">
+        <MappingFragment StoreEntitySet="Streamer_details">
+          <ScalarProperty Name="streamer_id" ColumnName="streamer_id" />
+          <ScalarProperty Name="streamer_name" ColumnName="streamer_name" />
+          <ScalarProperty Name="twitch_rank" ColumnName="twitch_rank" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="most_streamed_game" ColumnName="most_streamed_game" />
+          <ScalarProperty Name="number_of_followers" ColumnName="number_of_followers" />
+          <ScalarProperty Name="game_id" ColumnName="game_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="GamesDataModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teams">
+      <EntityTypeMapping TypeName="GamesDataModel.Team">
+        <MappingFragment StoreEntitySet="Team">
+          <ScalarProperty Name="team_id" ColumnName="team_id" />
+          <ScalarProperty Name="team_name" ColumnName="team_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tournament_details">
+      <EntityTypeMapping TypeName="GamesDataModel.Tournament_details">
+        <MappingFragment StoreEntitySet="Tournament_details">
+          <ScalarProperty Name="tournament_id" ColumnName="tournament_id" />
+          <ScalarProperty Name="tournament_name" ColumnName="tournament_name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="tournament_game_id" ColumnName="tournament_game_id" />
+          <ScalarProperty Name="tournament_game_name" ColumnName="tournament_game_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="GamesDataModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="user_password" ColumnName="user_password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="GamesDataModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="GamesDataModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="GamesDataModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="GamesDataModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GamesDataModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="GamesDataModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="GamesDataModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="GamesDataModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="GamesDataModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>
