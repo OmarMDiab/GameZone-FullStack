@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Gamezone.Models.Streamer_details>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.streamer_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.twitch_rank)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.most_streamed_game)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.number_of_followers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Game_titles.game_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.streamer_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.twitch_rank)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.most_streamed_game)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.number_of_followers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Game_titles.game_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.streamer_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.streamer_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.streamer_id })
+        </td>
+    </tr>
+}
+
+</table>

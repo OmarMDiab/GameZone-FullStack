@@ -129,9 +129,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminsController.cs" />
+    <Compile Include="Controllers\Game_enginesController.cs" />
     <Compile Include="Controllers\Game_titlesController.cs" />
+    <Compile Include="Controllers\gaming_organizationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\loginController.cs" />
+    <Compile Include="Controllers\Streamer_detailsController.cs" />
+    <Compile Include="Controllers\TeamsController.cs" />
+    <Compile Include="Controllers\Tournament_detailsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -264,6 +270,36 @@
     <Content Include="Views\Admins\Details.cshtml" />
     <Content Include="Views\Admins\Edit.cshtml" />
     <Content Include="Views\Admins\Index.cshtml" />
+    <Content Include="Views\Game_engines\Create.cshtml" />
+    <Content Include="Views\Game_engines\Delete.cshtml" />
+    <Content Include="Views\Game_engines\Details.cshtml" />
+    <Content Include="Views\Game_engines\Edit.cshtml" />
+    <Content Include="Views\Game_engines\Index.cshtml" />
+    <Content Include="Views\gaming_organization\Create.cshtml" />
+    <Content Include="Views\gaming_organization\Delete.cshtml" />
+    <Content Include="Views\gaming_organization\Details.cshtml" />
+    <Content Include="Views\gaming_organization\Edit.cshtml" />
+    <Content Include="Views\gaming_organization\Index.cshtml" />
+    <Content Include="Views\Streamer_details\Create.cshtml" />
+    <Content Include="Views\Streamer_details\Delete.cshtml" />
+    <Content Include="Views\Streamer_details\Details.cshtml" />
+    <Content Include="Views\Streamer_details\Edit.cshtml" />
+    <Content Include="Views\Streamer_details\Index.cshtml" />
+    <Content Include="Views\Teams\Create.cshtml" />
+    <Content Include="Views\Teams\Delete.cshtml" />
+    <Content Include="Views\Teams\Details.cshtml" />
+    <Content Include="Views\Teams\Edit.cshtml" />
+    <Content Include="Views\Teams\Index.cshtml" />
+    <Content Include="Views\Tournament_details\Create.cshtml" />
+    <Content Include="Views\Tournament_details\Delete.cshtml" />
+    <Content Include="Views\Tournament_details\Details.cshtml" />
+    <Content Include="Views\Tournament_details\Edit.cshtml" />
+    <Content Include="Views\Tournament_details\Index.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

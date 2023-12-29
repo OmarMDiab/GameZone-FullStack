@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Gamezone.Models.gaming_organization>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.org_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.org_establishment_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.org_team_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.org_achievements)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.org_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.org_establishment_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.org_team_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.org_achievements)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.org_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.org_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.org_id })
+        </td>
+    </tr>
+}
+
+</table>
