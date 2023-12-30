@@ -135,7 +135,6 @@
     <Compile Include="Controllers\Game_titlesController.cs" />
     <Compile Include="Controllers\gaming_organizationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\loginController.cs" />
     <Compile Include="Controllers\Streamer_detailsController.cs" />
     <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Controllers\Tournament_detailsController.cs" />
@@ -198,6 +197,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Explores.css" />
+    <Content Include="Content\Game.css" />
+    <Content Include="Content\Login-Signup.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

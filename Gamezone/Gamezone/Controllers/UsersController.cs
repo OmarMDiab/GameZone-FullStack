@@ -61,7 +61,7 @@ namespace Gamezone.Controllers
                 db.SaveChanges();
                 Session["User_ids"] = user.user_id.ToString();
                 Session["User_names"] = user.user_name.ToString();
-                return RedirectToAction("Index","Users");
+                return RedirectToAction("Index", "Home");
             }
             else
             {
@@ -87,7 +87,7 @@ namespace Gamezone.Controllers
             {
                 Session["User_ids"] = user.user_id.ToString();
                 Session["User_names"] = user.user_name.ToString();
-                return RedirectToAction("Index", "Users");
+                return RedirectToAction("Index", "Home");
             }
             else
             {

@@ -4,45 +4,47 @@
     ViewBag.Title = "Signup";
 }
 
-<h2>Signup</h2>
+<link href="~/Content/Login-Signup.css" rel="stylesheet" />
 
+<h1 class="h1_page">Join Us</h1>
+<div class="bodylog">
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
-    <h4>User</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.user_name, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.user_name, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.user_name, "", new { @class = "text-danger" })
-        </div>
-    </div>
+    <section class="sectionlog">
+        <div class="signin">
+            <div class="content">
+                <h2>Sign Up</h2>
+                <div class="form">
+                    @using (Html.BeginForm("Signup", "Users", FormMethod.Post, new { id = "signupForm", @class = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.user_password, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.user_password, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.user_password, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
-        </div>
-    </div>
+                        <div class="inputBox">
+                            @Html.TextBoxFor(model => model.user_name, new { required = "required", placeholder = "Omar_Diab" })
+                            <i>Username</i>
+                        </div>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="signup" class="btn btn-default" />
+                        <div class="inputBox">
+                            @Html.PasswordFor(model => model.user_password, new { required = "required" })
+                            <i>Password</i>
+                        </div>
+
+                        <div class="inputBox">
+                            @Html.PasswordFor(model => model.ConfirmPassword, new { required = "required" })
+                            <i>Confirm Password</i>
+                        </div>
+
+                        <div class="links">
+                            <a href="/Users/Login">Login</a>
+                        </div>
+
+                        <div class="inputBox" id="signupbtn">
+                            <input type="submit" value="Sign Up">
+                        </div>
+                    }
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 </div>
 }
 
