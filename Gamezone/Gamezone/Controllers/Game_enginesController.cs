@@ -12,7 +12,7 @@ namespace Gamezone.Controllers
 {
     public class Game_enginesController : Controller
     {
-        private GamesDataEntities1 db = new GamesDataEntities1();
+        private GamesDataEntities2 db = new GamesDataEntities2();
 
         // GET: Game_engines
         public ActionResult Index()

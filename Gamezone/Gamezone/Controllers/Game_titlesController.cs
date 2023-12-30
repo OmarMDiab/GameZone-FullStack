@@ -13,7 +13,7 @@ namespace Gamezone.Controllers
     //[Authorize] // Require authentication for all actions
     public class Game_titlesController : Controller
     {
-        private GamesDataEntities1 db = new GamesDataEntities1();
+        private GamesDataEntities2 db = new GamesDataEntities2();
 
         // GET: Game_titles
         public ActionResult Index()

@@ -21,6 +21,7 @@ namespace Gamezone.Models
 
         [Required]
         public string user_password { get; set; }
+       
     }
 
 

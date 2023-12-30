@@ -12,7 +12,7 @@ namespace Gamezone.Controllers
 {
     public class Streamer_detailsController : Controller
     {
-        private GamesDataEntities1 db = new GamesDataEntities1();
+        private GamesDataEntities2 db = new GamesDataEntities2();
 
         // GET: Streamer_details
         public ActionResult Index()
@@ -20,9 +20,27 @@ namespace Gamezone.Controllers
             var streamer_details = db.Streamer_details.Include(s => s.Game_titles);
             return View(streamer_details.ToList());
         }
+        public ActionResult GuestSDIndex()
+        {
+            var streamer_details = db.Streamer_details.Include(s => s.Game_titles);
+            return View(streamer_details.ToList());
+        }
 
         // GET: Streamer_details/Details/5
         public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Streamer_details streamer_details = db.Streamer_details.Find(id);
+            if (streamer_details == null)
+            {
+                return HttpNotFound();
+            }
+            return View(streamer_details);
+        }
+        public ActionResult GuestSDDetails(int? id)
         {
             if (id == null)
             {

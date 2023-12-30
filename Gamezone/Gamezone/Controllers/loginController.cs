@@ -12,8 +12,8 @@ namespace Gamezone.Controllers
 {
     public class loginController : Controller
     {
-        private GamesDataEntities1 db = new GamesDataEntities1();
-
+        private GamesDataEntities2 db = new GamesDataEntities2();
+        string role = Constants.RoleNames.Admin;
         // GET: Account/Login
         public ActionResult Login()
         {
@@ -31,8 +31,8 @@ namespace Gamezone.Controllers
 
                 if (user != null)
                 {
-                    // Authenticate the user (for simplicity, you can use FormsAuthentication or Identity)
-                    // For example: FormsAuthentication.SetAuthCookie(user.UserName, false);
+                    // Authenticate the user 
+                   
 
                     return RedirectToAction("Index", "Home"); // Redirect to the home page after successful login
                 }
