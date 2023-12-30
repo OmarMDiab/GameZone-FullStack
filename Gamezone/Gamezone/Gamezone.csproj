@@ -305,6 +305,7 @@
     <Content Include="Views\Users\Signup.cshtml" />
     <Content Include="Views\Users\Login.cshtml" />
     <Content Include="Views\Streamer_details\ExploreStreamers.cshtml" />
+    <Content Include="Views\Streamer_details\StreamerDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

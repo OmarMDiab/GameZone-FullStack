@@ -37,6 +37,7 @@
     <Property Name="developer" Type="nchar" MaxLength="20" />
     <Property Name="release_date" Type="date" />
     <Property Name="ign_rate" Type="float" />
+    <Property Name="game_thumbnails" Type="nvarchar" MaxLength="300" />
   </EntityType>
   <EntityType Name="gaming_organization">
     <Key>

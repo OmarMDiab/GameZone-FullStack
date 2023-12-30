@@ -1,0 +1,38 @@
+﻿@model Gamezone.Models.Streamer_details
+
+@{
+    ViewBag.Title = "StreamerDetails";
+}
+
+<div class="container">
+    <!-- Streamer Name and Rank -->
+    <section class="text-center">
+        <h1>@Model.streamer_name</h1>
+        <p> @Model.twitch_rank</p>
+        <p>Followers: @Model.number_of_followers</p>
+    </section>
+
+    <!-- Streamer Profile Section -->
+    <section class="row profile-section">
+        <div class="col-md-8">
+            <!-- Streamer Description -->
+            <p>@Model.description</p>
+        </div>
+        <div class="col-md-4">
+            <!-- Streamer Image -->
+            <img src="@Model.thumbnail" alt="Streamer Image" class="img-fluid rounded">
+        </div>
+    </section>
+
+    <!-- Twitch Link Button -->
+    @*<section class="text-center">
+        <h1 class="h1_page">
+            <a href="@Model.twitch_channel_link" target="_blank">
+                Click here to visit Twitch channel
+            </a>
+        </h1>
+    </section>*@
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

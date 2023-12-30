@@ -42,6 +42,7 @@
           <Property Name="developer" Type="nchar" MaxLength="20" />
           <Property Name="release_date" Type="date" />
           <Property Name="ign_rate" Type="float" />
+          <Property Name="game_thumbnails" Type="nvarchar" MaxLength="300" />
         </EntityType>
         <EntityType Name="gaming_organization">
           <Key>
@@ -282,6 +283,7 @@
           <NavigationProperty Name="Game_stores" Relationship="Self.FK_Game_stores_Game_titles" FromRole="Game_titles" ToRole="Game_stores" />
           <NavigationProperty Name="Streamer_details" Relationship="Self.FK_Streamer_details_Game_titles" FromRole="Game_titles" ToRole="Streamer_details" />
           <NavigationProperty Name="Tournament_details" Relationship="Self.FK_Tournament_details_Game_titles" FromRole="Game_titles" ToRole="Tournament_details" />
+          <Property Name="game_thumbnails" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="gaming_organization">
           <Key>
@@ -518,6 +520,7 @@
           <EntitySetMapping Name="Game_titles">
             <EntityTypeMapping TypeName="GamesDataModel.Game_titles">
               <MappingFragment StoreEntitySet="Game_titles">
+                <ScalarProperty Name="game_thumbnails" ColumnName="game_thumbnails" />
                 <ScalarProperty Name="game_id" ColumnName="game_id" />
                 <ScalarProperty Name="game_name" ColumnName="game_name" />
                 <ScalarProperty Name="description" ColumnName="description" />

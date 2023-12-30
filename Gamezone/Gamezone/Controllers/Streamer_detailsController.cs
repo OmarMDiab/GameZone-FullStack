@@ -26,9 +26,9 @@ namespace Gamezone.Controllers
             var streamer_details = db.Streamer_details.Include(s => s.Game_titles);
             return View(streamer_details.ToList());
         }
-
-        // GET: Streamer_details/Details/5
-        public ActionResult Details(int? id)
+    
+    // GET: Streamer_details/Details/5
+    public ActionResult Details(int? id)
         {
             //if (id == null)
             //{
@@ -41,42 +41,31 @@ namespace Gamezone.Controllers
             }
             return View(streamer_details);
         }
-        public ActionResult ExploreStreamers(int? id)
+        public ActionResult ExploreStreamers()
         {
-            try
-            {
-                // Retrieve all streamers from the database
-                List<Streamer_details> allStreamers = db.Streamer_details.ToList();
-
-                return View(allStreamers);
-            }
-            catch (Exception)
-            {
-                // Log the exception
-                // Example: _logger.LogError(ex, "An error occurred in ExploreStreamers action.");
-                throw; // Rethrow the exception
-            }
+            List<Streamer_details> allStreamers = db.Streamer_details.ToList();
+            return View(allStreamers);
         }
 
-        //Streamer_details streamer_details = db.Streamer_details.Find(id);
+        public ActionResult StreamerDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
 
-        //if (streamer_details == null)
-        //{
-        //    return HttpNotFound();
-        //}
+            Streamer_details streamer = db.Streamer_details.Find(id);
 
-        //// Create a view model to pass the required data to the view
-        //var streamerViewModel = new ExploreStreamerViewModel
-        //{
-        //    StreamerName = streamer_details.streamer_name,
-        //    ThumbnailUrl = streamer_details.thumbnail,
-        //    Description = streamer_details.description
-        //    // Add other properties you may need
-        //};
+            if (streamer == null)
+            {
+                return HttpNotFound();
+            }
 
-        //return View(streamerViewModel);
+            return View(streamer);
+        }
 
-        public ActionResult GuestSDDetails(int? id)
+
+            public ActionResult GuestSDDetails(int? id)
         {
             if (id == null)
             {

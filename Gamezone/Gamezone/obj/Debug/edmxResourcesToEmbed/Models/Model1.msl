@@ -32,6 +32,7 @@
     <EntitySetMapping Name="Game_titles">
       <EntityTypeMapping TypeName="GamesDataModel.Game_titles">
         <MappingFragment StoreEntitySet="Game_titles">
+          <ScalarProperty Name="game_thumbnails" ColumnName="game_thumbnails" />
           <ScalarProperty Name="game_id" ColumnName="game_id" />
           <ScalarProperty Name="game_name" ColumnName="game_name" />
           <ScalarProperty Name="description" ColumnName="description" />
