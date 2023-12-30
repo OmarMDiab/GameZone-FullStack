@@ -87,6 +87,7 @@
     <Property Name="number_of_followers" Type="Int32" />
     <Property Name="game_id" Type="Int32" />
     <NavigationProperty Name="Game_titles" Relationship="Self.FK_Streamer_details_Game_titles" FromRole="Streamer_details" ToRole="Game_titles" />
+    <Property Name="thumbnail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Team">
     <Key>

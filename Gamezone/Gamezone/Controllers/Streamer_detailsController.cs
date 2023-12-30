@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Gamezone.Models;
+using Gamezone.ViewModels;
 
 namespace Gamezone.Controllers
 {
@@ -39,6 +40,30 @@ namespace Gamezone.Controllers
                 return HttpNotFound();
             }
             return View(streamer_details);
+        }
+        public ActionResult ExploreStreamer(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Streamer_details streamer_details = db.Streamer_details.Find(id);
+
+            if (streamer_details == null)
+            {
+                return HttpNotFound();
+            }
+
+            // Create a view model to pass the required data to the view
+            var streamerViewModel = new ExploreStreamerViewModel
+            {
+                StreamerName = streamer_details.streamer_name,
+                Thumbnail = streamer_details.thumbnail
+                // Add other properties you may need
+            };
+
+            return View(streamerViewModel);
         }
         public ActionResult GuestSDDetails(int? id)
         {

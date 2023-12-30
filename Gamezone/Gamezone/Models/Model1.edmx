@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GamesDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="GamesDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Admins">
           <Key>
             <PropertyRef Name="admin_key" />
@@ -82,6 +82,7 @@
           <Property Name="most_streamed_game" Type="nchar" MaxLength="100" />
           <Property Name="number_of_followers" Type="int" />
           <Property Name="game_id" Type="int" />
+          <Property Name="thumbnail" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Team">
           <Key>
@@ -233,8 +234,7 @@
             <End Role="Tournament_details" EntitySet="Tournament_details" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GamesDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -325,6 +325,7 @@
           <Property Name="number_of_followers" Type="Int32" />
           <Property Name="game_id" Type="Int32" />
           <NavigationProperty Name="Game_titles" Relationship="Self.FK_Streamer_details_Game_titles" FromRole="Streamer_details" ToRole="Game_titles" />
+          <Property Name="thumbnail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Team">
           <Key>
@@ -562,6 +563,7 @@
           <EntitySetMapping Name="Streamer_details">
             <EntityTypeMapping TypeName="GamesDataModel.Streamer_details">
               <MappingFragment StoreEntitySet="Streamer_details">
+                <ScalarProperty Name="thumbnail" ColumnName="thumbnail" />
                 <ScalarProperty Name="streamer_id" ColumnName="streamer_id" />
                 <ScalarProperty Name="streamer_name" ColumnName="streamer_name" />
                 <ScalarProperty Name="twitch_rank" ColumnName="twitch_rank" />

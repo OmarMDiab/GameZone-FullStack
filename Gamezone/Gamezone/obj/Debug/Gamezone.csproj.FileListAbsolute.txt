@@ -163,4 +163,3 @@ D:\college work\internet program\IP_MajorTask\GameZone-FullStack\Gamezone\Gamezo
 D:\college work\internet program\IP_MajorTask\GameZone-FullStack\Gamezone\Gamezone\obj\Debug\Gamezone.csproj.CopyComplete
 D:\college work\internet program\IP_MajorTask\GameZone-FullStack\Gamezone\Gamezone\obj\Debug\Gamezone.dll
 D:\college work\internet program\IP_MajorTask\GameZone-FullStack\Gamezone\Gamezone\obj\Debug\Gamezone.pdb
-D:\college work\internet program\IP_MajorTask\GameZone-FullStack\Gamezone\Gamezone\obj\Debug\Gamezone.csproj.AssemblyReference.cache

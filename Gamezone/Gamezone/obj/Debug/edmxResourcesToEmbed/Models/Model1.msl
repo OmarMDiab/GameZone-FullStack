@@ -77,6 +77,7 @@
     <EntitySetMapping Name="Streamer_details">
       <EntityTypeMapping TypeName="GamesDataModel.Streamer_details">
         <MappingFragment StoreEntitySet="Streamer_details">
+          <ScalarProperty Name="thumbnail" ColumnName="thumbnail" />
           <ScalarProperty Name="streamer_id" ColumnName="streamer_id" />
           <ScalarProperty Name="streamer_name" ColumnName="streamer_name" />
           <ScalarProperty Name="twitch_rank" ColumnName="twitch_rank" />

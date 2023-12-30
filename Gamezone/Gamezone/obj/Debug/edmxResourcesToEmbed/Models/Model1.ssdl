@@ -77,6 +77,7 @@
     <Property Name="most_streamed_game" Type="nchar" MaxLength="100" />
     <Property Name="number_of_followers" Type="int" />
     <Property Name="game_id" Type="int" />
+    <Property Name="thumbnail" Type="nvarchar" MaxLength="100" />
   </EntityType>
   <EntityType Name="Team">
     <Key>
