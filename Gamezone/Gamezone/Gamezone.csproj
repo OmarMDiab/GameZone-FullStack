@@ -304,6 +304,7 @@
     <Content Include="Views\Tournament_details\GuestTODetails.cshtml" />
     <Content Include="Views\Users\Signup.cshtml" />
     <Content Include="Views\Users\Login.cshtml" />
+    <Content Include="Views\Streamer_details\ExploreStreamers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

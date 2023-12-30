@@ -8,7 +8,7 @@ namespace Gamezone.ViewModels
     public class ExploreStreamerViewModel
     {
         public string StreamerName { get; set; }
-        public string Thumbnail { get; set; }
-        // Add other properties you may need
+        public string Description { get; set; }
+        public string ThumbnailUrl { get; set; }
     }
 }
