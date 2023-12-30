@@ -161,7 +161,6 @@
     <Compile Include="Models\Guest.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\loginSignup.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -299,6 +298,8 @@
     <Content Include="Views\Teams\GuestTEIndex.cshtml" />
     <Content Include="Views\Tournament_details\GuestTOIndex.cshtml" />
     <Content Include="Views\Tournament_details\GuestTODetails.cshtml" />
+    <Content Include="Views\Users\Signup.cshtml" />
+    <Content Include="Views\Users\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

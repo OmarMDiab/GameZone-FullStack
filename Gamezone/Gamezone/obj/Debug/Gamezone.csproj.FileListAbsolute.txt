@@ -159,8 +159,8 @@ D:\college work\internet program\IP_MajorTask\GameZone-FullStack\Gamezone\Gamezo
 D:\college work\internet program\IP_MajorTask\GameZone-FullStack\Gamezone\Gamezone\bin\Newtonsoft.Json.xml
 D:\college work\internet program\IP_MajorTask\GameZone-FullStack\Gamezone\Gamezone\bin\Antlr3.Runtime.pdb
 D:\college work\internet program\IP_MajorTask\GameZone-FullStack\Gamezone\Gamezone\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\college work\internet program\IP_MajorTask\GameZone-FullStack\Gamezone\Gamezone\obj\Debug\Gamezone.csproj.AssemblyReference.cache
 D:\college work\internet program\IP_MajorTask\GameZone-FullStack\Gamezone\Gamezone\obj\Debug\Gamezone.csproj.CoreCompileInputs.cache
 D:\college work\internet program\IP_MajorTask\GameZone-FullStack\Gamezone\Gamezone\obj\Debug\Gamezone.csproj.CopyComplete
 D:\college work\internet program\IP_MajorTask\GameZone-FullStack\Gamezone\Gamezone\obj\Debug\Gamezone.dll
 D:\college work\internet program\IP_MajorTask\GameZone-FullStack\Gamezone\Gamezone\obj\Debug\Gamezone.pdb
+D:\college work\internet program\IP_MajorTask\GameZone-FullStack\Gamezone\Gamezone\obj\Debug\Gamezone.csproj.AssemblyReference.cache
