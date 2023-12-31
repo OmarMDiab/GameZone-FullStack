@@ -98,6 +98,9 @@
     <EntitySetMapping Name="Teams">
       <EntityTypeMapping TypeName="GamesDataModel.Team">
         <MappingFragment StoreEntitySet="Team">
+          <ScalarProperty Name="team_info" ColumnName="team_info" />
+          <ScalarProperty Name="team_logo" ColumnName="team_logo" />
+          <ScalarProperty Name="awards" ColumnName="awards" />
           <ScalarProperty Name="team_id" ColumnName="team_id" />
           <ScalarProperty Name="team_name" ColumnName="team_name" />
         </MappingFragment>
@@ -106,6 +109,10 @@
     <EntitySetMapping Name="Tournament_details">
       <EntityTypeMapping TypeName="GamesDataModel.Tournament_details">
         <MappingFragment StoreEntitySet="Tournament_details">
+          <ScalarProperty Name="actual_game_vid" ColumnName="actual_game_vid" />
+          <ScalarProperty Name="esports_link" ColumnName="esports_link" />
+          <ScalarProperty Name="intro_vid" ColumnName="intro_vid" />
+          <ScalarProperty Name="thumbnail" ColumnName="thumbnail" />
           <ScalarProperty Name="tournament_id" ColumnName="tournament_id" />
           <ScalarProperty Name="tournament_name" ColumnName="tournament_name" />
           <ScalarProperty Name="description" ColumnName="description" />

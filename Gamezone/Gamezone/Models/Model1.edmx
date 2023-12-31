@@ -97,6 +97,9 @@
           </Key>
           <Property Name="team_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="team_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="awards" Type="int" />
+          <Property Name="team_logo" Type="nvarchar" MaxLength="1000" />
+          <Property Name="team_info" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="Tournament_details">
           <Key>
@@ -107,6 +110,10 @@
           <Property Name="description" Type="nvarchar" MaxLength="2000" />
           <Property Name="tournament_game_id" Type="int" />
           <Property Name="tournament_game_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="thumbnail" Type="nvarchar" MaxLength="1000" />
+          <Property Name="intro_vid" Type="nvarchar" MaxLength="1000" />
+          <Property Name="esports_link" Type="nvarchar" MaxLength="1000" />
+          <Property Name="actual_game_vid" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -348,6 +355,9 @@
           <Property Name="team_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="team_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Proplayers" Relationship="Self.FK_Proplayers_Team" FromRole="Team" ToRole="Proplayers" />
+          <Property Name="awards" Type="Int32" />
+          <Property Name="team_logo" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="team_info" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Tournament_details">
           <Key>
@@ -359,6 +369,10 @@
           <Property Name="tournament_game_id" Type="Int32" />
           <Property Name="tournament_game_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Game_titles" Relationship="Self.FK_Tournament_details_Game_titles" FromRole="Tournament_details" ToRole="Game_titles" />
+          <Property Name="thumbnail" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="intro_vid" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="esports_link" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="actual_game_vid" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -598,6 +612,9 @@
           <EntitySetMapping Name="Teams">
             <EntityTypeMapping TypeName="GamesDataModel.Team">
               <MappingFragment StoreEntitySet="Team">
+                <ScalarProperty Name="team_info" ColumnName="team_info" />
+                <ScalarProperty Name="team_logo" ColumnName="team_logo" />
+                <ScalarProperty Name="awards" ColumnName="awards" />
                 <ScalarProperty Name="team_id" ColumnName="team_id" />
                 <ScalarProperty Name="team_name" ColumnName="team_name" />
               </MappingFragment>
@@ -606,6 +623,10 @@
           <EntitySetMapping Name="Tournament_details">
             <EntityTypeMapping TypeName="GamesDataModel.Tournament_details">
               <MappingFragment StoreEntitySet="Tournament_details">
+                <ScalarProperty Name="actual_game_vid" ColumnName="actual_game_vid" />
+                <ScalarProperty Name="esports_link" ColumnName="esports_link" />
+                <ScalarProperty Name="intro_vid" ColumnName="intro_vid" />
+                <ScalarProperty Name="thumbnail" ColumnName="thumbnail" />
                 <ScalarProperty Name="tournament_id" ColumnName="tournament_id" />
                 <ScalarProperty Name="tournament_name" ColumnName="tournament_name" />
                 <ScalarProperty Name="description" ColumnName="description" />

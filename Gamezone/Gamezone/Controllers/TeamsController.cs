@@ -21,8 +21,8 @@ namespace Gamezone.Controllers
         }
         public ActionResult ExploreTeams()
         {
-            List<Streamer_details> allStreamers = db.Streamer_details.ToList();
-            return View(allStreamers);
+            List<Team> allteams = db.Teams.ToList();
+            return View(allteams);
         }
         public ActionResult GuestTEIndex()
         {

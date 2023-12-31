@@ -92,6 +92,9 @@
     </Key>
     <Property Name="team_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="team_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="awards" Type="int" />
+    <Property Name="team_logo" Type="nvarchar" MaxLength="1000" />
+    <Property Name="team_info" Type="nvarchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="Tournament_details">
     <Key>
@@ -102,6 +105,10 @@
     <Property Name="description" Type="nvarchar" MaxLength="2000" />
     <Property Name="tournament_game_id" Type="int" />
     <Property Name="tournament_game_name" Type="nvarchar" MaxLength="100" />
+    <Property Name="thumbnail" Type="nvarchar" MaxLength="1000" />
+    <Property Name="intro_vid" Type="nvarchar" MaxLength="1000" />
+    <Property Name="esports_link" Type="nvarchar" MaxLength="1000" />
+    <Property Name="actual_game_vid" Type="nvarchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="Users">
     <Key>

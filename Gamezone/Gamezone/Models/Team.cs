@@ -22,6 +22,9 @@ namespace Gamezone.Models
     
         public int team_id { get; set; }
         public string team_name { get; set; }
+        public Nullable<int> awards { get; set; }
+        public string team_logo { get; set; }
+        public string team_info { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Proplayer> Proplayers { get; set; }

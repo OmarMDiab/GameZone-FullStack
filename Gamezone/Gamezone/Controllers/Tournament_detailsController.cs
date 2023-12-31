@@ -22,8 +22,24 @@ namespace Gamezone.Controllers
         }
         public ActionResult ExploreTournaments()
         {
-            List<Streamer_details> allStreamers = db.Streamer_details.ToList();
-            return View(allStreamers);
+            List<Tournament_details> allTournaments = db.Tournament_details.ToList();
+            return View(allTournaments);
+        }
+        public ActionResult TournamentDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Tournament_details tournament = db.Tournament_details.Find(id);
+
+            if (tournament == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(tournament);
         }
         public ActionResult GuestTOIndex()
         {

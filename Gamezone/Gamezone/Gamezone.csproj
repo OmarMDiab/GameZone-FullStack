@@ -326,6 +326,9 @@
     <Content Include="Views\Game_stores\Index.cshtml" />
     <Content Include="Views\Game_stores\ExploreStores.cshtml" />
     <Content Include="Views\Game_stores\StoreDetails.cshtml" />
+    <Content Include="Views\Teams\ExploreTeams.cshtml" />
+    <Content Include="Views\Tournament_details\ExploreTournaments.cshtml" />
+    <Content Include="Views\Tournament_details\TournamentDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
