@@ -19,6 +19,10 @@ namespace Gamezone.Models
         public string description { get; set; }
         public Nullable<int> tournament_game_id { get; set; }
         public string tournament_game_name { get; set; }
+        public string thumbnail { get; set; }
+        public string intro_vid { get; set; }
+        public string esports_link { get; set; }
+        public string actual_game_vid { get; set; }
     
         public virtual Game_titles Game_titles { get; set; }
     }

@@ -12,7 +12,7 @@ namespace Gamezone.Controllers
 {
     public class Tournament_detailsController : Controller
     {
-        private GamesDataEntities1 db = new GamesDataEntities1();
+        private GamesDataEntities2 db = new GamesDataEntities2();
 
         // GET: Tournament_details
         public ActionResult Index()
@@ -20,9 +20,49 @@ namespace Gamezone.Controllers
             var tournament_details = db.Tournament_details.Include(t => t.Game_titles);
             return View(tournament_details.ToList());
         }
+        public ActionResult ExploreTournaments()
+        {
+            List<Tournament_details> allTournaments = db.Tournament_details.ToList();
+            return View(allTournaments);
+        }
+        public ActionResult TournamentDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Tournament_details tournament = db.Tournament_details.Find(id);
+
+            if (tournament == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(tournament);
+        }
+        public ActionResult GuestTOIndex()
+        {
+            var tournament_details = db.Tournament_details.Include(t => t.Game_titles);
+            return View(tournament_details.ToList());
+        }
+
 
         // GET: Tournament_details/Details/5
         public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Tournament_details tournament_details = db.Tournament_details.Find(id);
+            if (tournament_details == null)
+            {
+                return HttpNotFound();
+            }
+            return View(tournament_details);
+        }
+        public ActionResult GuestTODetails(int? id)
         {
             if (id == null)
             {

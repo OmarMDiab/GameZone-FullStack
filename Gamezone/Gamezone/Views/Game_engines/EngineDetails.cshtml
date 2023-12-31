@@ -1,0 +1,31 @@
+﻿@model Gamezone.Models.Game_engines
+
+@{
+    ViewBag.Title = "EngineDetails";
+}
+
+<section class="text-center">
+    <h1 class="h1_page">@Model.game_engine_name </h1>
+</section>
+<div class="mybox">
+    <!-- Streamer Profile Section -->
+    <div class="t_img_row">
+        <div>
+            <!-- Streamer Description -->
+            <p>@Model.game_engine_description</p>
+        </div>
+        <div>
+            <!-- Streamer Image -->
+            <img src="@Model.engine_logo" alt="engine Image" width="500px">
+        </div>
+
+    </div>
+
+
+
+
+
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

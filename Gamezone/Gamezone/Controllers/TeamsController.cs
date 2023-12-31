@@ -12,16 +12,38 @@ namespace Gamezone.Controllers
 {
     public class TeamsController : Controller
     {
-        private GamesDataEntities1 db = new GamesDataEntities1();
+        private GamesDataEntities2 db = new GamesDataEntities2();
 
         // GET: Teams
         public ActionResult Index()
         {
             return View(db.Teams.ToList());
         }
+        public ActionResult ExploreTeams()
+        {
+            List<Team> allteams = db.Teams.ToList();
+            return View(allteams);
+        }
+        public ActionResult GuestTEIndex()
+        {
+            return View(db.Teams.ToList());
+        }
 
         // GET: Teams/Details/5
         public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Team team = db.Teams.Find(id);
+            if (team == null)
+            {
+                return HttpNotFound();
+            }
+            return View(team);
+        }
+        public ActionResult GuestTEDetails(int? id)
         {
             if (id == null)
             {

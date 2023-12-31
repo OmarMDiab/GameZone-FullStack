@@ -18,6 +18,7 @@ namespace Gamezone.Models
         public Nullable<int> game_id { get; set; }
         public string game_engine_name { get; set; }
         public string game_engine_description { get; set; }
+        public string engine_logo { get; set; }
     
         public virtual Game_titles Game_titles { get; set; }
     }

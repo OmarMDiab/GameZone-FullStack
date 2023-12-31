@@ -11,7 +11,8 @@ namespace Gamezone.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,11 +21,19 @@ namespace Gamezone.Models
             this.Admins = new HashSet<Admin>();
             this.Guests = new HashSet<Guest>();
         }
-    
+
         public int user_id { get; set; }
+        [Display(Name = "Username")]
+        [Required(ErrorMessage = "this field is rquired")]
         public string user_name { get; set; }
+        [Display(Name = "Password")]
+        [Required(ErrorMessage = "this field is rquired")]
         public string user_password { get; set; }
-    
+        [Display(Name = "Confirm Password")]
+        [Required(ErrorMessage = "this field is rquired")]
+        [Compare("user_password", ErrorMessage = "The password and confirmation password do not match.")]
+        public string ConfirmPassword { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Admin> Admins { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

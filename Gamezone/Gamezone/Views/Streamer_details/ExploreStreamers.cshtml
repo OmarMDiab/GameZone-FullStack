@@ -1,0 +1,26 @@
+﻿@model List<Gamezone.Models.Streamer_details>
+
+@{
+    ViewBag.Title = "ExploreStreamers";
+}
+
+<h1 class="h1_page">Explore Streamers</h1>
+<link href="~/Content/Explores.css" rel="stylesheet" />
+<div class="row gy-5">
+    @foreach (var streamer in Model)
+    {
+        <div class="py-3 col-md-8 d-flex align-items-center justify-content-center">
+            <div >
+                <p class="text-center">@streamer.description</p>
+            </div>
+        </div>
+        <div class="py-3 col-md-4">
+            <div style="padding:10px 0px;">
+                <a href="@Url.Action("StreamerDetails", "Streamer_details", new { id = streamer.streamer_id })">
+                    <img class="mycard" src="@streamer.thumbnail" style="width:100%;" alt="Streamer Thumbnail" title="Click to Visit Streamer Page!" />
+                </a>
+                    <h4 class="py-3 text-center" style="color:goldenrod; font-size:40px;">@streamer.streamer_name</h4>
+            </div>
+        </div>
+    }
+</div>

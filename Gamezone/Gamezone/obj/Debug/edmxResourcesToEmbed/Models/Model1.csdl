@@ -17,6 +17,7 @@
     <Property Name="game_engine_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="game_engine_description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Game_titles" Relationship="Self.FK_Game_engines_Game_titles" FromRole="Game_engines" ToRole="Game_titles" />
+    <Property Name="engine_logo" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Game_stores">
     <Key>
@@ -27,6 +28,7 @@
     <Property Name="store_game_id" Type="Int32" />
     <Property Name="store_description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Game_titles" Relationship="Self.FK_Game_stores_Game_titles" FromRole="Game_stores" ToRole="Game_titles" />
+    <Property Name="Store_logo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Game_titles">
     <Key>
@@ -44,6 +46,7 @@
     <NavigationProperty Name="Game_stores" Relationship="Self.FK_Game_stores_Game_titles" FromRole="Game_titles" ToRole="Game_stores" />
     <NavigationProperty Name="Streamer_details" Relationship="Self.FK_Streamer_details_Game_titles" FromRole="Game_titles" ToRole="Streamer_details" />
     <NavigationProperty Name="Tournament_details" Relationship="Self.FK_Tournament_details_Game_titles" FromRole="Game_titles" ToRole="Tournament_details" />
+    <Property Name="game_thumbnails" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="gaming_organization">
     <Key>
@@ -71,9 +74,11 @@
     <Property Name="player_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="player_nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="player_team" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="player_achievements" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="player_achievements" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
     <Property Name="player_team_id" Type="Int32" />
     <NavigationProperty Name="Team" Relationship="Self.FK_Proplayers_Team" FromRole="Proplayers" ToRole="Team" />
+    <Property Name="player_picture" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="player_describtion" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Streamer_details">
     <Key>
@@ -87,16 +92,9 @@
     <Property Name="number_of_followers" Type="Int32" />
     <Property Name="game_id" Type="Int32" />
     <NavigationProperty Name="Game_titles" Relationship="Self.FK_Streamer_details_Game_titles" FromRole="Streamer_details" ToRole="Game_titles" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="thumbnail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="twitch_link" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="iframe_src" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Team">
     <Key>
@@ -105,6 +103,9 @@
     <Property Name="team_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="team_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Proplayers" Relationship="Self.FK_Proplayers_Team" FromRole="Team" ToRole="Proplayers" />
+    <Property Name="awards" Type="Int32" />
+    <Property Name="team_logo" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="team_info" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Tournament_details">
     <Key>
@@ -116,6 +117,10 @@
     <Property Name="tournament_game_id" Type="Int32" />
     <Property Name="tournament_game_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Game_titles" Relationship="Self.FK_Tournament_details_Game_titles" FromRole="Tournament_details" ToRole="Game_titles" />
+    <Property Name="thumbnail" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="intro_vid" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="esports_link" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="actual_game_vid" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="User">
     <Key>
@@ -211,7 +216,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="GamesDataEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="GamesDataEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Admins" EntityType="Self.Admin" />
     <EntitySet Name="Game_engines" EntityType="Self.Game_engines" />
     <EntitySet Name="Game_stores" EntityType="Self.Game_stores" />
@@ -220,7 +225,6 @@
     <EntitySet Name="Guests" EntityType="Self.Guest" />
     <EntitySet Name="Proplayers" EntityType="Self.Proplayer" />
     <EntitySet Name="Streamer_details" EntityType="Self.Streamer_details" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="Teams" EntityType="Self.Team" />
     <EntitySet Name="Tournament_details" EntityType="Self.Tournament_details" />
     <EntitySet Name="Users" EntityType="Self.User" />
@@ -252,46 +256,5 @@
       <End Role="Team" EntitySet="Teams" />
       <End Role="Proplayers" EntitySet="Proplayers" />
     </AssociationSet>
-    <FunctionImport Name="sp_alterdiagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="version" Mode="In" Type="Int32" />
-      <Parameter Name="definition" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="sp_creatediagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="version" Mode="In" Type="Int32" />
-      <Parameter Name="definition" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="sp_dropdiagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(GamesDataModel.sp_helpdiagramdefinition_Result)">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(GamesDataModel.sp_helpdiagrams_Result)">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_renamediagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="new_diagramname" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="sp_upgraddiagrams" />
   </EntityContainer>
-  <ComplexType Name="sp_helpdiagramdefinition_Result">
-    <Property Type="Int32" Name="version" Nullable="true" />
-    <Property Type="Binary" Name="definition" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="sp_helpdiagrams_Result">
-    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-    <Property Type="Int32" Name="OwnerID" Nullable="false" />
-  </ComplexType>
 </Schema>

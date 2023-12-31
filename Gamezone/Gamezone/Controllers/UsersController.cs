@@ -12,7 +12,7 @@ namespace Gamezone.Controllers
 {
     public class UsersController : Controller
     {
-        private GamesDataEntities1 db = new GamesDataEntities1();
+        private GamesDataEntities2 db = new GamesDataEntities2();
 
         // GET: Users
         public ActionResult Index()
@@ -40,7 +40,61 @@ namespace Gamezone.Controllers
         {
             return View();
         }
-
+        [HttpGet]
+        public ActionResult Signup()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Signup(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                // Check if the username is unique
+                if (db.Users.Any(x => x.user_name == user.user_name))
+                {
+                    ModelState.AddModelError("user_name", "Username is already taken");
+                    return View("Signup");
+                }
+                db.Users.Add(user);
+                db.SaveChanges();
+                Session["User_ids"] = user.user_id.ToString();
+                Session["User_names"] = user.user_name.ToString();
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return View();
+            }
+        }
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("login", "Users");
+        }
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(User user)
+        {
+            var checkLogin = db.Users.Where(x => x.user_name.Equals(user.user_name)&&x.user_password.Equals(user.user_password));
+            if(checkLogin != null)
+            {
+                Session["User_ids"] = user.user_id.ToString();
+                Session["User_names"] = user.user_name.ToString();
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.Notification = "wrong username or password";
+                return View("Login");
+            }
+        }
         // POST: Users/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.

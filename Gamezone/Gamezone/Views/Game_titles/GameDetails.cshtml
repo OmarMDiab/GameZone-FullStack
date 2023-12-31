@@ -1,0 +1,33 @@
+﻿@model Gamezone.Models.Game_titles
+
+@{
+    ViewBag.Title = "GameDetails";
+}
+<section class="text-center">
+    <h1 class="h1_page">@Model.game_name</h1>
+    <h2> genre: @Model.genre</h2>
+    <h2>IGN Rating: @Model.ign_rate/10</h2>
+    <p>developer: @Model.developer</p>
+    <p>release date: @Model.release_date</p>
+</section>
+<div class="mybox">
+    <!-- Game Name and Genre -->
+    <!-- Game Info Section -->
+
+    <div class="t_img_row">
+        <div>
+            <!-- Game Description -->
+            <p>@Model.description</p>
+        </div>
+        <div>
+            <!-- Game Image -->
+            <img src="@Model.game_thumbnails" alt="Streamer Image" width="500px">
+        </div>
+
+    </div>
+
+
+
+
+
+</div>

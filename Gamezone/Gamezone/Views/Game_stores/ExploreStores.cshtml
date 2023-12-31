@@ -1,0 +1,26 @@
+﻿@model List<Gamezone.Models.Game_stores>
+
+@{
+    ViewBag.Title = "ExploreStores";
+}
+
+<h1 class="h1_page">ExploreStores</h1>
+<link href="~/Content/Explores.css" rel="stylesheet" />
+<div class="row gy-5">
+    @foreach (var store in Model)
+    {
+        <div class="py-3 col-md-8">
+            <div style="margin: 20px;">
+                <p>@store.store_description</p>
+            </div>
+        </div>
+        <div class="py-3 col-md-4">
+            <div style="padding:10px 0px;">
+                <a href="@Url.Action("StoreDetails", "Game_stores", new { id = store.store_id })">
+                    <img class="mycard" src="@store.Store_logo" style="width:100%;" alt="game Thumbnail" title="Click to Visit Streamer Page!" />
+                </a>
+                <h4 class="py-3 text-center" style="color:goldenrod; font-size:40px;">@store.store_name</h4>
+            </div>
+        </div>
+    }
+</div>

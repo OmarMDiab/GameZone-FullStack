@@ -1,0 +1,26 @@
+﻿@model List<Gamezone.Models.Proplayer>
+
+@{
+    ViewBag.Title = "ExplorePlayers";
+}
+
+<h1 class="h1_page">ExplorePlayers</h1>
+<link href="~/Content/Explores.css" rel="stylesheet" />
+<div class="row gy-5">
+    @foreach (var player in Model)
+    {
+        <div class="py-3 col-md-8">
+            <div style="margin: 20px;">
+                <p>@player.player_describtion</p>
+            </div>
+        </div>
+        <div class="py-3 col-md-4">
+            <div style="padding:10px 0px;">
+                <a href="@Url.Action("PlayerDetails", "Proplayers", new { id = player.player_id })">
+                    <img class="mycard" src="@player.player_picture" style="width:100%;" alt="game Thumbnail" title="Click to Visit Streamer Page!" />
+                </a>
+                <h4 class="py-3 text-center" style="color:goldenrod; font-size:40px;">@player.player_name</h4>
+            </div>
+        </div>
+    }
+</div>

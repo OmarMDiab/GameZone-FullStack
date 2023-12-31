@@ -1,0 +1,23 @@
+﻿.mycard {
+    transition: transform 0.3s;
+    border-radius:10px;
+}
+
+    .mycard:hover {
+        transform: scale(1.05);
+        animation: glow2 2s infinite;
+    }
+
+@keyframes glow2 {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 223, 0, 0.8);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgb(25, 25, 23);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(255, 223, 0, 0.8);
+    }
+}

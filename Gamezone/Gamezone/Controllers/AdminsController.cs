@@ -12,10 +12,10 @@ namespace Gamezone.Controllers
 {
     public class AdminsController : Controller
     {
-        private GamesDataEntities1 db = new GamesDataEntities1();
+        private GamesDataEntities2 db = new GamesDataEntities2();
 
         // GET: Admins
-        [Authorize(Roles = "Admin")] // Restrict access to Admin role
+      //  [Authorize(Roles = "Admin")] // Restrict access to Admin role
         public ActionResult Index()
         {
             var admins = db.Admins.Include(a => a.User);
@@ -23,7 +23,7 @@ namespace Gamezone.Controllers
         }
 
         // GET: Admins/Details/5
-        [Authorize(Roles = "Admin")] // Restrict access to Admin role
+       // [Authorize(Roles = "Admin")] // Restrict access to Admin role
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -39,7 +39,7 @@ namespace Gamezone.Controllers
         }
 
         // GET: Admins/Create
-        [Authorize(Roles = "Admin")] // Restrict access to Admin role
+       // [Authorize(Roles = "Admin")] // Restrict access to Admin role
         public ActionResult Create()
         {
             ViewBag.user_id = new SelectList(db.Users, "user_id", "user_name");
@@ -51,7 +51,7 @@ namespace Gamezone.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")] // Restrict access to Admin role
+        //[Authorize(Roles = "Admin")] // Restrict access to Admin role
         public ActionResult Create([Bind(Include = "admin_key,user_id")] Admin admin)
         {
             if (ModelState.IsValid)
@@ -66,7 +66,7 @@ namespace Gamezone.Controllers
         }
 
         // GET: Admins/Edit/5
-        [Authorize(Roles = "Admin")] // Restrict access to Admin role
+        //[Authorize(Roles = "Admin")] // Restrict access to Admin role
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -87,7 +87,7 @@ namespace Gamezone.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")] // Restrict access to Admin role
+        //[Authorize(Roles = "Admin")] // Restrict access to Admin role
         public ActionResult Edit([Bind(Include = "admin_key,user_id")] Admin admin)
         {
             if (ModelState.IsValid)
@@ -101,7 +101,7 @@ namespace Gamezone.Controllers
         }
 
         // GET: Admins/Delete/5
-        [Authorize(Roles = "Admin")] // Restrict access to Admin role
+       // [Authorize(Roles = "Admin")] // Restrict access to Admin role
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -119,7 +119,7 @@ namespace Gamezone.Controllers
         // POST: Admins/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin")] // Restrict access to Admin role
+        //[Authorize(Roles = "Admin")] // Restrict access to Admin role
         public ActionResult DeleteConfirmed(int id)
         {
             Admin admin = db.Admins.Find(id);

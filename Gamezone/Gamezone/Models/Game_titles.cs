@@ -31,6 +31,7 @@ namespace Gamezone.Models
         public string developer { get; set; }
         public Nullable<System.DateTime> release_date { get; set; }
         public Nullable<double> ign_rate { get; set; }
+        public string game_thumbnails { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Game_engines> Game_engines { get; set; }

@@ -1,0 +1,34 @@
+﻿@model Gamezone.Models.Proplayer
+
+@{
+    ViewBag.Title = "PlayerDetails";
+}
+
+<section class="text-center">
+    <h1 class="h1_page">@Model.player_name</h1>
+    <h2> nationality: @Model.player_nationality</h2>
+    <h2>team: @Model.player_team</h2>
+    <p>achievments: @Model.player_achievements</p>
+</section>
+<div class="mybox">
+    <!-- Game Name and Genre -->
+    <!-- Game Info Section -->
+
+    <div class="t_img_row">
+        <div>
+            <!-- Game Description -->
+            <p>@Model.player_describtion</p>
+        </div>
+        <div>
+            <!-- Game Image -->
+            <img src="@Model.player_picture" alt="Streamer Image" width="500px">
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
+

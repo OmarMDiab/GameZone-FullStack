@@ -1,24 +1,240 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.img-fluid {
+    height: 400px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.txtdsc {
+    width: 50%;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+.text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: 50px;
 }
+
+:root {
+    --main-color: #d3ad7f;
+    --black: #13131a;
+    --bg: #010103;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: 0.2s linear;
+}
+
+.h1_page {
+    margin-top: 150px;
+    text-align: center;
+    color: goldenrod;
+    font-size: 6rem;
+    animation: glow 2s infinite;
+    text-transform: capitalize;
+}
+
+    .h1_page a {
+        text-decoration: none;
+        color: goldenrod;
+    }
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 223, 0, 0.8);
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgb(25, 25, 23);
+    }
+
+    100% {
+        text-shadow: 0 0 10px rgba(255, 223, 0, 0.8);
+    }
+}
+
+p, h3 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-transform: none;
+}
+
+p:hover{
+    color:gold
+}
+
+
+
+
+html {
+    font-size: 62.5%;  /*= 10px  */
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+    html::-webkit-scrollbar {
+        width: 0.8rem;
+    }
+
+    html::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    html::-webkit-scrollbar-thumb {
+        background: #fff;
+        border-radius: 5rem;
+    }
+
+.mybody {
+    min-height: 100vh;
+    background-color: var(--bg);
+    padding: 0 10%;
+    overflow: hidden; /* or scroll, or auto */
+}
+body {
+    background-color: var(--bg);
+    overflow: hidden; /* or scroll, or auto */
+}
+
+.header {
+    background: var(--bg);
+    display: flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    align-items: center;
+    border-bottom: var(--border);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    position: fixed;
+    margin-bottom: 100px;
+}
+
+    .header .logo img {
+        height: 7rem;
+    }
+
+    .header .navbar ul {
+        list-style: none;
+        margin-top:30px;
+    }
+
+        .header .navbar ul li {
+            position: relative;
+            float:left;
+        }
+
+
+            .header .navbar ul li a {
+                margin: 0 1rem;
+                font-size: 2rem;
+                color: #fff;
+                margin-right: 6rem;
+                display: block;
+            }
+
+
+
+                .header .navbar ul li a:hover {
+                    color: goldenrod;
+                    text-decoration:none;
+                }
+
+
+
+
+h2 {
+    margin-bottom: 20px;
+    text-align: left;
+    color: goldenrod;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 4rem;
+    text-transform: capitalize;
+}
+
+
+footer {
+    background-color: var(--black);
+    color: var(--main-color);
+    font-size: 1.4rem;
+    text-align: center;
+    /*position: static;*/
+    bottom: 0;
+    width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 0px;
+    overflow: hidden; /* or scroll, or auto */
+}
+
+.home {
+    min-height: 100vh;
+    min-width: 100vh;
+    margin-top: 8rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: no-repeat center;
+}
+
+.fadeIn {
+    animation: fadeIn 3s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.mybox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+}
+
+    .mybox .t_vid {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .mybox .t_img_row {
+        display: flex;
+        gap: 50px;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .mybox .t_img_col {
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+        justify-content: center;
+    }

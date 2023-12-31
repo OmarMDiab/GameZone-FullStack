@@ -5,35 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS and Popper.js (required for some Bootstrap components) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    <div class="mybody">
+        <header class="header">
+            <h1 style="color: gold; font-size: 6rem; animation: glow 2s infinite;">
+                GZ
+            </h1>
+            <a href="@Url.Action("Index", "Home")" class="logo">
+                <img src="~/Images/GameZone_Logo.png" alt="my Logo" />
+            </a>
+
+            <nav class="navbar">
+                <ul>
+                    <li>@Html.ActionLink("Games", "ExploreGames", "Game_titles")</li>
+                    <li>@Html.ActionLink("Tournaments", "ExploreTournaments", "Tournament_details")</li>
+                    <li>@Html.ActionLink("Streamers", "ExploreStreamers", "Streamer_details")</li>
+                    <li>@Html.ActionLink("Game Engines", "ExploreEngines", "Game_Engines")</li>
+                    <li>@Html.ActionLink("Game Stores", "ExploreStores", "Game_Stores")</li>
+                    <li>@Html.ActionLink("Pro Players", "ExplorePlayers", "Proplayers")</li>
+                    <li>@Html.ActionLink("Pro Teams", "ExploreTeams", "Teams")</li>
+                    <li>@Html.ActionLink("Login", "Login", "Users")</li>
                 </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
+            </nav>
+        </header>
+
+
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
     </div>
+
+    <footer>
+        <h4 style="margin-bottom: 0px; padding: 5px;">&copy; @DateTime.Now.Year - Team_7 Gamezone</h4>
+    </footer>
+
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

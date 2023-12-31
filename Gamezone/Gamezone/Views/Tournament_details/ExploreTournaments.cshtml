@@ -1,0 +1,26 @@
+﻿@model List<Gamezone.Models.Tournament_details>
+
+@{
+    ViewBag.Title = "ExploreTournaments";
+}
+
+<h1 class="h1_page">ExploreGames</h1>
+<link href="~/Content/Explores.css" rel="stylesheet" />
+<div class="row gy-5">
+    @foreach (var tournament in Model)
+    {
+        <div class="py-3 col-md-8">
+            <div style="margin: 20px;">
+                <p>@tournament.description</p>
+            </div>
+        </div>
+        <div class="py-3 col-md-4">
+            <div class="t_vid" style="padding:10px 0px;">
+                <a href="@Url.Action("TournamentDetails", "Tournament_details", new { id = tournament.tournament_id })">
+                    <img class="mycard" src="@tournament.thumbnail" width="500px" alt="game Thumbnail" title="Click to Visit Streamer Page!" />
+                </a>
+                <h4 class="py-3 text-center" style="color:goldenrod; font-size:40px;">@tournament.tournament_name</h4>
+            </div>
+        </div>
+    }
+</div>

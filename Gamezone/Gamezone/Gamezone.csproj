@@ -128,12 +128,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Constants\RoleNames.cs" />
     <Compile Include="Controllers\AdminsController.cs" />
     <Compile Include="Controllers\Game_enginesController.cs" />
+    <Compile Include="Controllers\Game_storesController.cs" />
     <Compile Include="Controllers\Game_titlesController.cs" />
     <Compile Include="Controllers\gaming_organizationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\loginController.cs" />
+    <Compile Include="Controllers\ProplayersController.cs" />
     <Compile Include="Controllers\Streamer_detailsController.cs" />
     <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Controllers\Tournament_detailsController.cs" />
@@ -159,7 +162,6 @@
     <Compile Include="Models\Guest.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\loginSignup.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -178,16 +180,7 @@
     <Compile Include="Models\Proplayer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagrams_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Streamer_details.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Team.cs">
@@ -200,16 +193,21 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ExploreStreamerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Explores.css" />
+    <Content Include="Content\Game.css" />
+    <Content Include="Content\Login-Signup.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\GameZone_Logo.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -300,6 +298,37 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Streamer_details\GuestSDDetails.cshtml" />
+    <Content Include="Views\Streamer_details\GuestSDIndex.cshtml" />
+    <Content Include="Views\Teams\GuestTEDetails.cshtml" />
+    <Content Include="Views\Teams\GuestTEIndex.cshtml" />
+    <Content Include="Views\Tournament_details\GuestTOIndex.cshtml" />
+    <Content Include="Views\Tournament_details\GuestTODetails.cshtml" />
+    <Content Include="Views\Users\Signup.cshtml" />
+    <Content Include="Views\Users\Login.cshtml" />
+    <Content Include="Views\Streamer_details\ExploreStreamers.cshtml" />
+    <Content Include="Views\Streamer_details\StreamerDetails.cshtml" />
+    <Content Include="Views\Proplayers\Create.cshtml" />
+    <Content Include="Views\Proplayers\Delete.cshtml" />
+    <Content Include="Views\Proplayers\Details.cshtml" />
+    <Content Include="Views\Proplayers\Edit.cshtml" />
+    <Content Include="Views\Proplayers\Index.cshtml" />
+    <Content Include="Views\Game_titles\ExploreGames.cshtml" />
+    <Content Include="Views\Game_titles\GameDetails.cshtml" />
+    <Content Include="Views\Game_engines\ExploreEngines.cshtml" />
+    <Content Include="Views\Game_engines\EngineDetails.cshtml" />
+    <Content Include="Views\Proplayers\ExplorePlayers.cshtml" />
+    <Content Include="Views\Proplayers\PlayerDetails.cshtml" />
+    <Content Include="Views\Game_stores\Create.cshtml" />
+    <Content Include="Views\Game_stores\Delete.cshtml" />
+    <Content Include="Views\Game_stores\Details.cshtml" />
+    <Content Include="Views\Game_stores\Edit.cshtml" />
+    <Content Include="Views\Game_stores\Index.cshtml" />
+    <Content Include="Views\Game_stores\ExploreStores.cshtml" />
+    <Content Include="Views\Game_stores\StoreDetails.cshtml" />
+    <Content Include="Views\Teams\ExploreTeams.cshtml" />
+    <Content Include="Views\Tournament_details\ExploreTournaments.cshtml" />
+    <Content Include="Views\Tournament_details\TournamentDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

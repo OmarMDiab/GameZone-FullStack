@@ -13,7 +13,7 @@ namespace Gamezone.Controllers
     //[Authorize] // Require authentication for all actions
     public class Game_titlesController : Controller
     {
-        private GamesDataEntities1 db = new GamesDataEntities1();
+        private GamesDataEntities2 db = new GamesDataEntities2();
 
         // GET: Game_titles
         public ActionResult Index()
@@ -21,7 +21,27 @@ namespace Gamezone.Controllers
             var gameTitles = db.Game_titles.ToList();
             return View(gameTitles);
         }
+        public ActionResult ExploreGames()
+        {
+            List<Game_titles> allGames = db.Game_titles .ToList();
+            return View(allGames);
+        }
+        public ActionResult GameDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
 
+            Game_titles game = db.Game_titles.Find(id);
+
+            if (game == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(game);
+        }
         // GET: Game_titles/Details/5
         public ActionResult Details(int? id)
         {

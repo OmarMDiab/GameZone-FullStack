@@ -1,0 +1,23 @@
+﻿@model List<Gamezone.Models.Team>
+
+@{
+    ViewBag.Title = "ExploreTeams";
+}
+
+<h1 class="h1_page" style="margin-bottom:20px">Explore Teams</h1>
+<link href="~/Content/Explores.css" rel="stylesheet" />
+<div class="row gy-5">
+    @foreach (var team in Model)
+    {
+
+        <div class="py-3 col-md-12">
+            <div style="padding:10px 0px;">
+                <a href="@team.team_info" target="_blank" title="Click to Visit team page">
+                    <img class="mycard" src="@team.team_logo" style="width:100%;" alt="team Thumbnail" />
+                </a>
+
+                <h4 class="py-3 text-center text-capitalize" style="color:goldenrod; font-size:40px;">@team.team_name</h4>
+            </div>
+        </div>
+    }
+</div>
