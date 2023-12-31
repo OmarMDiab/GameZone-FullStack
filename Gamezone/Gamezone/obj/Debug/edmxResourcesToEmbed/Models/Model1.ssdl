@@ -25,6 +25,7 @@
     <Property Name="store_name" Type="nvarchar" MaxLength="50" />
     <Property Name="store_game_id" Type="int" />
     <Property Name="store_description" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Store_logo" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="Game_titles">
     <Key>

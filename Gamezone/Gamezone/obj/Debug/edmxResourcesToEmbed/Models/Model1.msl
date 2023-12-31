@@ -23,6 +23,7 @@
     <EntitySetMapping Name="Game_stores">
       <EntityTypeMapping TypeName="GamesDataModel.Game_stores">
         <MappingFragment StoreEntitySet="Game_stores">
+          <ScalarProperty Name="Store_logo" ColumnName="Store_logo" />
           <ScalarProperty Name="store_id" ColumnName="store_id" />
           <ScalarProperty Name="store_name" ColumnName="store_name" />
           <ScalarProperty Name="store_game_id" ColumnName="store_game_id" />

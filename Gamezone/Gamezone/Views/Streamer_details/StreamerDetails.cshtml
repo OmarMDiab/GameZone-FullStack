@@ -3,66 +3,44 @@
 @{
     ViewBag.Title = "StreamerDetails";
 }
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="styles.css">
-    <title>Streamer Page</title>
-    <style>
-        body {
-            padding-top: 50px; /* Adjust based on your needs */
-        }
-
-        .profile-section {
-            margin-bottom: 30px;
-            height: 400px;
-        }
-
-        .video-section {
-            margin-bottom: 30px;
-            height: 400px;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Streamer Name and Rank -->
-    <section class="text-center">
-        <h1>@Model.streamer_name</h1>
-        <p> @Model.twitch_rank</p>
-        <p>Followers: @Model.number_of_followers</p>
-    </section>
-
+<!-- Streamer Name and Rank -->
+<section class="text-center">
+    <h1 class="h1_page">@Model.streamer_name #@Model.twitch_rank</h1>
+    <h2>Followers: @Model.number_of_followers</h2>
+</section>
+<div class="mybox">
     <!-- Streamer Profile Section -->
-    <section class="row ">
-        <div class="txtdsc">
+    <div class="t_img_row">
+        <div>
             <!-- Streamer Description -->
             <p>@Model.description</p>
         </div>
-        <div class="col-md-4">
+        <div>
             <!-- Streamer Image -->
-            <img src="@Model.thumbnail" alt="Streamer Image" class="img-fluid rounded">
+            <img  src="@Model.thumbnail" alt="Streamer Image" width="500px">
         </div>
-    </section>
+
+    </div>
+
     <!-- YouTube Video Section -->
-    <section class="row video-section">
-        <div class="col-md-12">
-            <!-- Replace 'VIDEO_ID' with your actual YouTube video ID -->
-            <iframe width="100%" height="315" src="@Model.iframe_src" frameborder="0" allowfullscreen></iframe>
+        <div class="t_img_col">
+
+            <div class="t_vid">
+                
+                <iframe width="866" height="487" src="@Model.iframe_src" frameborder="0" allowfullscreen></iframe>
+            </div>
+            
         </div>
-    </section>
+
     <!-- Twitch Link Button -->
-    <section class="text-center">
-        <h1 class="h1_page">
+        <h1 class="h1_page" style="margin-top:50px;">
             <a href="@Model.twitch_link" target="_blank">
                 Click here to visit Twitch channel
             </a>
         </h1>
-    </section>
 
     <p>
         @Html.ActionLink("Back to List", "Index")
     </p>
-</body>
+</div>
+

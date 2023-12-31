@@ -3,31 +3,31 @@
 @{
     ViewBag.Title = "GameDetails";
 }
-
-<h2>GameDetails</h2>
-<div class="container">
+<section class="text-center">
+    <h1 class="h1_page">@Model.game_name</h1>
+    <h2> genre: @Model.genre</h2>
+    <h2>IGN Rating: @Model.ign_rate/10</h2>
+    <p>developer: @Model.developer</p>
+    <p>release date: @Model.release_date</p>
+</section>
+<div class="mybox">
     <!-- Game Name and Genre -->
-    <section class="text-center">
-        <h1>@Model.game_name</h1>
-        <p> @Model.genre</p>
-        <p>IGN Rating: @Model.ign_rate</p>
-    </section>
-
     <!-- Game Info Section -->
-    <section class="row profile-section">
-        <div class="col-md-8">
+
+    <div class="t_img_row">
+        <div>
             <!-- Game Description -->
             <p>@Model.description</p>
-            <p>@Model.platform</p>
-            <p>@Model.developer</p>
-            <p>@Model.release_date</p>
-
-
         </div>
-        <div class="col-md-4">
+        <div>
             <!-- Game Image -->
-            <img src="@Model.game_thumbnails" alt="Streamer Image" class="img-fluid rounded">
+            <img src="@Model.game_thumbnails" alt="Streamer Image" width="500px">
         </div>
-    </section>
+
+    </div>
+
+
+
+
 
 </div>

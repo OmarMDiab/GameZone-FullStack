@@ -30,6 +30,7 @@
           <Property Name="store_name" Type="nvarchar" MaxLength="50" />
           <Property Name="store_game_id" Type="int" />
           <Property Name="store_description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Store_logo" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="Game_titles">
           <Key>
@@ -272,6 +273,7 @@
           <Property Name="store_game_id" Type="Int32" />
           <Property Name="store_description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Game_titles" Relationship="Self.FK_Game_stores_Game_titles" FromRole="Game_stores" ToRole="Game_titles" />
+          <Property Name="Store_logo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Game_titles">
           <Key>
@@ -521,6 +523,7 @@
           <EntitySetMapping Name="Game_stores">
             <EntityTypeMapping TypeName="GamesDataModel.Game_stores">
               <MappingFragment StoreEntitySet="Game_stores">
+                <ScalarProperty Name="Store_logo" ColumnName="Store_logo" />
                 <ScalarProperty Name="store_id" ColumnName="store_id" />
                 <ScalarProperty Name="store_name" ColumnName="store_name" />
                 <ScalarProperty Name="store_game_id" ColumnName="store_game_id" />

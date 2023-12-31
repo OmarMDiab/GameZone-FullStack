@@ -212,4 +212,29 @@ footer {
     }
 }
 
+.mybox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+}
 
+    .mybox .t_vid {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .mybox .t_img_row {
+        display: flex;
+        gap: 50px;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .mybox .t_img_col {
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+        justify-content: center;
+    }

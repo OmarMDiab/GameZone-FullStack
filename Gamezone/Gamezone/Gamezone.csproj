@@ -132,6 +132,7 @@
     <Compile Include="Constants\RoleNames.cs" />
     <Compile Include="Controllers\AdminsController.cs" />
     <Compile Include="Controllers\Game_enginesController.cs" />
+    <Compile Include="Controllers\Game_storesController.cs" />
     <Compile Include="Controllers\Game_titlesController.cs" />
     <Compile Include="Controllers\gaming_organizationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -318,6 +319,13 @@
     <Content Include="Views\Game_engines\EngineDetails.cshtml" />
     <Content Include="Views\Proplayers\ExplorePlayers.cshtml" />
     <Content Include="Views\Proplayers\PlayerDetails.cshtml" />
+    <Content Include="Views\Game_stores\Create.cshtml" />
+    <Content Include="Views\Game_stores\Delete.cshtml" />
+    <Content Include="Views\Game_stores\Details.cshtml" />
+    <Content Include="Views\Game_stores\Edit.cshtml" />
+    <Content Include="Views\Game_stores\Index.cshtml" />
+    <Content Include="Views\Game_stores\ExploreStores.cshtml" />
+    <Content Include="Views\Game_stores\StoreDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

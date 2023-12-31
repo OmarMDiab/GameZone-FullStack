@@ -18,6 +18,7 @@ namespace Gamezone.Models
         public string store_name { get; set; }
         public Nullable<int> store_game_id { get; set; }
         public string store_description { get; set; }
+        public string Store_logo { get; set; }
     
         public virtual Game_titles Game_titles { get; set; }
     }
