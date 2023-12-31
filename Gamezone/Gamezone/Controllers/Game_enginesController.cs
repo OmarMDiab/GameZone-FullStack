@@ -20,7 +20,27 @@ namespace Gamezone.Controllers
             var game_engines = db.Game_engines.Include(g => g.Game_titles);
             return View(game_engines.ToList());
         }
+        public ActionResult ExploreEngines()
+        {
+            List<Game_engines> allEngines = db.Game_engines.ToList();
+            return View(allEngines);
+        }
+        public ActionResult EngineDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
 
+            Game_engines engine = db.Game_engines.Find(id);
+
+            if (engine == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(engine);
+        }
         // GET: Game_engines/Details/5
         public ActionResult Details(int? id)
         {

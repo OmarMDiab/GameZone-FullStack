@@ -15,6 +15,7 @@
     <Property Name="game_id" Type="int" />
     <Property Name="game_engine_name" Type="nvarchar" MaxLength="50" />
     <Property Name="game_engine_description" Type="nvarchar" MaxLength="2000" />
+    <Property Name="engine_logo" Type="nvarchar" MaxLength="300" />
   </EntityType>
   <EntityType Name="Game_stores">
     <Key>
@@ -64,8 +65,10 @@
     <Property Name="player_name" Type="nvarchar" MaxLength="50" />
     <Property Name="player_nationality" Type="nvarchar" MaxLength="50" />
     <Property Name="player_team" Type="nvarchar" MaxLength="50" />
-    <Property Name="player_achievements" Type="nvarchar" MaxLength="200" />
+    <Property Name="player_achievements" Type="nvarchar" MaxLength="2000" />
     <Property Name="player_team_id" Type="int" />
+    <Property Name="player_picture" Type="nvarchar" MaxLength="500" />
+    <Property Name="player_describtion" Type="nvarchar" MaxLength="2000" />
   </EntityType>
   <EntityType Name="Streamer_details">
     <Key>
@@ -79,6 +82,8 @@
     <Property Name="number_of_followers" Type="int" />
     <Property Name="game_id" Type="int" />
     <Property Name="thumbnail" Type="nvarchar" MaxLength="100" />
+    <Property Name="twitch_link" Type="nvarchar" MaxLength="1000" />
+    <Property Name="iframe_src" Type="nvarchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="Team">
     <Key>

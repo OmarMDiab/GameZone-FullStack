@@ -20,6 +20,11 @@ namespace Gamezone.Controllers
             var tournament_details = db.Tournament_details.Include(t => t.Game_titles);
             return View(tournament_details.ToList());
         }
+        public ActionResult ExploreTournaments()
+        {
+            List<Streamer_details> allStreamers = db.Streamer_details.ToList();
+            return View(allStreamers);
+        }
         public ActionResult GuestTOIndex()
         {
             var tournament_details = db.Tournament_details.Include(t => t.Game_titles);

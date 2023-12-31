@@ -22,6 +22,8 @@ namespace Gamezone.Models
         public Nullable<int> number_of_followers { get; set; }
         public Nullable<int> game_id { get; set; }
         public string thumbnail { get; set; }
+        public string twitch_link { get; set; }
+        public string iframe_src { get; set; }
     
         public virtual Game_titles Game_titles { get; set; }
     }

@@ -20,6 +20,7 @@
           <Property Name="game_id" Type="int" />
           <Property Name="game_engine_name" Type="nvarchar" MaxLength="50" />
           <Property Name="game_engine_description" Type="nvarchar" MaxLength="2000" />
+          <Property Name="engine_logo" Type="nvarchar" MaxLength="300" />
         </EntityType>
         <EntityType Name="Game_stores">
           <Key>
@@ -69,8 +70,10 @@
           <Property Name="player_name" Type="nvarchar" MaxLength="50" />
           <Property Name="player_nationality" Type="nvarchar" MaxLength="50" />
           <Property Name="player_team" Type="nvarchar" MaxLength="50" />
-          <Property Name="player_achievements" Type="nvarchar" MaxLength="200" />
+          <Property Name="player_achievements" Type="nvarchar" MaxLength="2000" />
           <Property Name="player_team_id" Type="int" />
+          <Property Name="player_picture" Type="nvarchar" MaxLength="500" />
+          <Property Name="player_describtion" Type="nvarchar" MaxLength="2000" />
         </EntityType>
         <EntityType Name="Streamer_details">
           <Key>
@@ -84,6 +87,8 @@
           <Property Name="number_of_followers" Type="int" />
           <Property Name="game_id" Type="int" />
           <Property Name="thumbnail" Type="nvarchar" MaxLength="100" />
+          <Property Name="twitch_link" Type="nvarchar" MaxLength="1000" />
+          <Property Name="iframe_src" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="Team">
           <Key>
@@ -256,6 +261,7 @@
           <Property Name="game_engine_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="game_engine_description" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Game_titles" Relationship="Self.FK_Game_engines_Game_titles" FromRole="Game_engines" ToRole="Game_titles" />
+          <Property Name="engine_logo" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Game_stores">
           <Key>
@@ -311,9 +317,11 @@
           <Property Name="player_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="player_nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="player_team" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="player_achievements" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="player_achievements" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
           <Property Name="player_team_id" Type="Int32" />
           <NavigationProperty Name="Team" Relationship="Self.FK_Proplayers_Team" FromRole="Proplayers" ToRole="Team" />
+          <Property Name="player_picture" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="player_describtion" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Streamer_details">
           <Key>
@@ -328,6 +336,8 @@
           <Property Name="game_id" Type="Int32" />
           <NavigationProperty Name="Game_titles" Relationship="Self.FK_Streamer_details_Game_titles" FromRole="Streamer_details" ToRole="Game_titles" />
           <Property Name="thumbnail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="twitch_link" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="iframe_src" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Team">
           <Key>
@@ -500,6 +510,7 @@
           <EntitySetMapping Name="Game_engines">
             <EntityTypeMapping TypeName="GamesDataModel.Game_engines">
               <MappingFragment StoreEntitySet="Game_engines">
+                <ScalarProperty Name="engine_logo" ColumnName="engine_logo" />
                 <ScalarProperty Name="game_engine_id" ColumnName="game_engine_id" />
                 <ScalarProperty Name="game_id" ColumnName="game_id" />
                 <ScalarProperty Name="game_engine_name" ColumnName="game_engine_name" />
@@ -554,6 +565,8 @@
           <EntitySetMapping Name="Proplayers">
             <EntityTypeMapping TypeName="GamesDataModel.Proplayer">
               <MappingFragment StoreEntitySet="Proplayers">
+                <ScalarProperty Name="player_describtion" ColumnName="player_describtion" />
+                <ScalarProperty Name="player_picture" ColumnName="player_picture" />
                 <ScalarProperty Name="player_id" ColumnName="player_id" />
                 <ScalarProperty Name="player_name" ColumnName="player_name" />
                 <ScalarProperty Name="player_nationality" ColumnName="player_nationality" />
@@ -566,6 +579,8 @@
           <EntitySetMapping Name="Streamer_details">
             <EntityTypeMapping TypeName="GamesDataModel.Streamer_details">
               <MappingFragment StoreEntitySet="Streamer_details">
+                <ScalarProperty Name="iframe_src" ColumnName="iframe_src" />
+                <ScalarProperty Name="twitch_link" ColumnName="twitch_link" />
                 <ScalarProperty Name="thumbnail" ColumnName="thumbnail" />
                 <ScalarProperty Name="streamer_id" ColumnName="streamer_id" />
                 <ScalarProperty Name="streamer_name" ColumnName="streamer_name" />

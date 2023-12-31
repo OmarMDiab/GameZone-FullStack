@@ -12,6 +12,7 @@
     <EntitySetMapping Name="Game_engines">
       <EntityTypeMapping TypeName="GamesDataModel.Game_engines">
         <MappingFragment StoreEntitySet="Game_engines">
+          <ScalarProperty Name="engine_logo" ColumnName="engine_logo" />
           <ScalarProperty Name="game_engine_id" ColumnName="game_engine_id" />
           <ScalarProperty Name="game_id" ColumnName="game_id" />
           <ScalarProperty Name="game_engine_name" ColumnName="game_engine_name" />
@@ -66,6 +67,8 @@
     <EntitySetMapping Name="Proplayers">
       <EntityTypeMapping TypeName="GamesDataModel.Proplayer">
         <MappingFragment StoreEntitySet="Proplayers">
+          <ScalarProperty Name="player_describtion" ColumnName="player_describtion" />
+          <ScalarProperty Name="player_picture" ColumnName="player_picture" />
           <ScalarProperty Name="player_id" ColumnName="player_id" />
           <ScalarProperty Name="player_name" ColumnName="player_name" />
           <ScalarProperty Name="player_nationality" ColumnName="player_nationality" />
@@ -78,6 +81,8 @@
     <EntitySetMapping Name="Streamer_details">
       <EntityTypeMapping TypeName="GamesDataModel.Streamer_details">
         <MappingFragment StoreEntitySet="Streamer_details">
+          <ScalarProperty Name="iframe_src" ColumnName="iframe_src" />
+          <ScalarProperty Name="twitch_link" ColumnName="twitch_link" />
           <ScalarProperty Name="thumbnail" ColumnName="thumbnail" />
           <ScalarProperty Name="streamer_id" ColumnName="streamer_id" />
           <ScalarProperty Name="streamer_name" ColumnName="streamer_name" />

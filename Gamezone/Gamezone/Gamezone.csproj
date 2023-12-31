@@ -135,6 +135,7 @@
     <Compile Include="Controllers\Game_titlesController.cs" />
     <Compile Include="Controllers\gaming_organizationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProplayersController.cs" />
     <Compile Include="Controllers\Streamer_detailsController.cs" />
     <Compile Include="Controllers\TeamsController.cs" />
     <Compile Include="Controllers\Tournament_detailsController.cs" />
@@ -306,6 +307,17 @@
     <Content Include="Views\Users\Login.cshtml" />
     <Content Include="Views\Streamer_details\ExploreStreamers.cshtml" />
     <Content Include="Views\Streamer_details\StreamerDetails.cshtml" />
+    <Content Include="Views\Proplayers\Create.cshtml" />
+    <Content Include="Views\Proplayers\Delete.cshtml" />
+    <Content Include="Views\Proplayers\Details.cshtml" />
+    <Content Include="Views\Proplayers\Edit.cshtml" />
+    <Content Include="Views\Proplayers\Index.cshtml" />
+    <Content Include="Views\Game_titles\ExploreGames.cshtml" />
+    <Content Include="Views\Game_titles\GameDetails.cshtml" />
+    <Content Include="Views\Game_engines\ExploreEngines.cshtml" />
+    <Content Include="Views\Game_engines\EngineDetails.cshtml" />
+    <Content Include="Views\Proplayers\ExplorePlayers.cshtml" />
+    <Content Include="Views\Proplayers\PlayerDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

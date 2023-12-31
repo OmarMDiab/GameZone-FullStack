@@ -20,6 +20,8 @@ namespace Gamezone.Models
         public string player_team { get; set; }
         public string player_achievements { get; set; }
         public Nullable<int> player_team_id { get; set; }
+        public string player_picture { get; set; }
+        public string player_describtion { get; set; }
     
         public virtual Team Team { get; set; }
     }
